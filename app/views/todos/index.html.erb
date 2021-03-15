@@ -1,0 +1,7 @@
+<h1>This is todos list</h1>
+
+<h2>Toddos: <%= Todo.count%> </h2>
+
+<%Todo.order(:id).each do |todo|%>
+  <p> <%= todo.to_pleasant_string%> </p>
+<% end %>
