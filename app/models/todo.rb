@@ -17,8 +17,20 @@ class Todo < ActiveRecord::Base
     Todo.delete(todo_id)
   end
 
-  def due_today?
-    due_date == Date.today
+  def self.due_today
+    Todo.where("due_date = ? ",  Date.today)
+  end
+
+  def self.due_later
+    Todo.where("due_date > ? ",  Date.today)
+  end
+
+  def self.over_due
+    Todo.where("due_date < ? ", Date.today)
+  end
+
+  def show_due_date?
+    return due_date != Date.today
   end
 
 end
