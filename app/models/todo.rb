@@ -13,13 +13,6 @@ class Todo < ActiveRecord::Base
     )
   end
 
-  def self.mark_as_complete!(todo_id)
-    todo = Todo.find(todo_id)
-    todo.completed = true
-    todo.save
-    return todo
-  end
-
   def self.delete_todo(todo_id)
     Todo.delete(todo_id)
   end

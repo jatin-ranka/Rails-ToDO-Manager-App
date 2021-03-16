@@ -24,8 +24,13 @@ class TodosController < ApplicationController
 
   def update
     id = params[:id]
-    updated_todo = Todo.mark_as_complete!(id)
-    render plain: updated_todo.to_pleasant_string
+    completed = params[:completed]
+
+    todo = Todo.find(id)
+    todo.completed = completed
+    todo.save
+
+    redirect_to todos_path
   end
 
   def destroy

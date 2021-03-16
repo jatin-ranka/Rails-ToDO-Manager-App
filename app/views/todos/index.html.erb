@@ -11,7 +11,18 @@
 <ul>
     <% Todo.order(:id).each do |todo| %>
       <li class="todo">
-        <p class="" <%= todo.completed ? 'strike' : '' %>">
+
+        <%= form_with url: "/todos/#{todo.id}", method: :put do %>
+          <input
+            name="completed"
+            type="checkbox"
+            <%= todo.completed   ? "checked" : "" %>
+            onclick="this.form.submit()"
+          />
+        <% end %>
+
+
+        <p class="">
           <%= todo.id %>
         </p>
 
