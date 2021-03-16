@@ -8,7 +8,7 @@ class Todo < ActiveRecord::Base
   def self.add_task(new_todo)
     Todo.create!(
       "todo_text": new_todo[:todo_text],
-      "due_date": Date.today + new_todo[:due_in_days].to_i,
+      "due_date": new_todo[:due_date],
       "completed": false
     )
   end
@@ -20,6 +20,12 @@ class Todo < ActiveRecord::Base
     return todo
   end
 
+  def self.delete_todo(todo_id)
+    Todo.delete(todo_id)
+  end
 
+  def due_today?
+    due_date == Date.today
+  end
 
 end

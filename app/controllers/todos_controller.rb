@@ -19,12 +19,19 @@ class TodosController < ApplicationController
     }
     puts new_todo
     todo = Todo.add_task(new_todo)
-    render plain: todo.to_pleasant_string
+    redirect_to todos_path
   end
 
   def update
     id = params[:id]
     updated_todo = Todo.mark_as_complete!(id)
     render plain: updated_todo.to_pleasant_string
+  end
+
+  def destroy
+    id = params[:id]
+    del = Todo.delete_todo(id)
+
+    redirect_to todos_path
   end
 end
