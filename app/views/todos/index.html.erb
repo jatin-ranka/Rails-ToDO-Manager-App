@@ -5,7 +5,7 @@
 <%= form_with url: "/todos", method: :post do%>
   <input type="text" name="todo_text" placeholder="Type todo here...">
   <input type="date" name="due_date">
-  <button type="submit"> Add </button>
+  <button type="submit" class="primary-btn"> Add </button>
 <% end %>
 
 <%= render partial: "todos", locals: {name: "Over Due", todos: Todo.over_due} %>
