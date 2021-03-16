@@ -1,0 +1,21 @@
+p {
+  margin: 0rem;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.todo-text {
+  margin: 0rem 0.5rem;
+}
+
+.due-date {
+  margin: 0rem 1rem 0rem 0.5rem;
+}
+
+.strike {
+  text-decoration-line: line-through;
+}
