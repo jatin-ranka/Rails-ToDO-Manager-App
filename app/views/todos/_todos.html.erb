@@ -1,0 +1,30 @@
+<h2><%= name%></h2>
+<ul>
+  <% todos.each do |todo| %>
+    <li class="todo">
+
+      <%= form_with url: "/todos/#{todo.id}", method: :put do %>
+        <%= check_box_tag :completed, "completed", todo.completed ? true : false, onclick: "this.form.submit()"  %>
+      <% end %>
+
+      <p class="">
+        <%= todo.id %>
+      </p>
+
+      <p class="todo-text <%= todo.completed ? 'strike' : '' %>">
+        <%= todo.todo_text %>
+      </p>
+
+      <% if todo.show_due_date? %>
+        <p class="due-date">
+          <%= todo.due_date.to_s(:short) %>
+        </p>
+      <% end %>
+
+      <%= form_with url: "todos/#{todo.id}", method: :delete do %>
+        <%= button_tag :Delete, type: "submit" %>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>
