@@ -1,0 +1,22 @@
+<h1>Sign in</h1>
+
+<section class="Form-Container">
+
+  <%= form_with url: sessions_path, method: :post do |form| %>
+    <div class="Form-section">
+      <p>Email: </p>
+      <%= form.email_field :email, class: "Form-Input" %>
+    </div>
+
+    <div class="Form-section">
+      <p>Password: </p>
+      <%= form.password_field :password, class: "Form-Input" %>
+    </div>
+
+    <%= form.submit "Sign in", class: "primary-btn" %>
+
+  <% end %>
+
+</section>
+
+<%= link_to "Register", new_user_path %>
