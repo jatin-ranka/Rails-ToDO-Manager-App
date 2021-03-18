@@ -1,3 +1,5 @@
+<h1>Register</h1>
+
 <section class="Form-Container">
 
   <%= form_with url: users_path, method: :post do |form| %>
@@ -26,3 +28,5 @@
   <% end %>
 
 </section>
+
+<%= link_to "Sign in", new_sessions_path %>
