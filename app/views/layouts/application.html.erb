@@ -9,9 +9,16 @@
   </head>
 
   <body>
+
   <%if @current_user%>
-    <p class="user-name-heading">Welcome: <%= @current_user.first_name %>  </p>
+    <div class="user-container">
+      <p class="user-name-heading">Welcome: <%= @current_user.first_name %>  </p>
+
+      <%= link_to "Sign out", destroy_session_path, method: :delete, class: "primary-btn" %>
+
+    </div>
   <% end %>
+
     <%= yield %>
   </body>
 </html>
