@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+.user-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-name-heading {
+  margin: 1rem 0rem;
+  padding: 0.5rem;
+  background-color: lightblue;
+  font-size: 1rem;
+  width: max-content;
+}
