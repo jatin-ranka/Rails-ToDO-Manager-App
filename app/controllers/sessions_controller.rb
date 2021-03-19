@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])&.authenticate(params[:password])
     if user
       session[:current_user_id] = user.id
-      render plain: "Password correct."
+      redirect_to todos_path
     else
       render plain: "Password incorrect!"
     end
