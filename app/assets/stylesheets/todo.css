@@ -25,6 +25,13 @@ p {
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: #4CAF50;
-  color: #FFFFFF;
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.user-name-heading {
+  margin: 1rem 0rem;
+  padding: 0.5rem;
+  background-color: lightblue;
+  font-size: 1rem;
 }
