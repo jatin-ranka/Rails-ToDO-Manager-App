@@ -8,6 +8,6 @@
   <button type="submit" class="primary-btn"> Add </button>
 <% end %>
 
-<%= render partial: "todos", locals: {name: "Over Due", todos: Todo.over_due} %>
-<%= render partial: "todos", locals: {name: "Due today", todos: Todo.due_today} %>
-<%= render partial: "todos", locals: {name: "Due Later", todos: Todo.due_later} %>
+<%= render partial: "todos", locals: {name: "Over Due", todos: @todos.over_due} %>
+<%= render partial: "todos", locals: {name: "Due today", todos: @todos.due_today} %>
+<%= render partial: "todos", locals: {name: "Due Later", todos: @todos.due_later} %>

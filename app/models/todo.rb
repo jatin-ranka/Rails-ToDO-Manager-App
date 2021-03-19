@@ -6,12 +6,8 @@ class Todo < ActiveRecord::Base
     return "#{id}. #{due_date.to_s(:short)} - #{todo_text} #{is_completed} "
   end
 
-  def self.add_task(new_todo)
-    Todo.create!(
-      "todo_text": new_todo[:todo_text],
-      "due_date": new_todo[:due_date],
-      "completed": false
-    )
+  def self.of_user(user)
+    Todo.all.where(user_id: user.id)
   end
 
   def self.delete_todo(todo_id)
