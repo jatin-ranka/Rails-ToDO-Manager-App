@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to todos_path
     else
-      render plain: "Password incorrect!"
+      flash[:error] = "Invalid email/password!"
+      redirect_to new_sessions_path
     end
   end
 

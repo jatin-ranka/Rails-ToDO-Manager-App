@@ -27,3 +27,9 @@
   font-size: 1rem;
   width: max-content;
 }
+
+.flash-error {
+  background-color: #fecaca;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0rem;
+}

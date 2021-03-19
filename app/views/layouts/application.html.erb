@@ -10,6 +10,12 @@
 
   <body>
 
+  <%if flash[:error]%>
+    <p class="flash-error">
+      <%= flash[:error]%>
+    </p>
+  <% end %>
+
   <%if @current_user%>
     <div class="user-container">
       <p class="user-name-heading">Welcome: <%= @current_user.first_name %>  </p>
